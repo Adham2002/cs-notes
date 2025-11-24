@@ -1,0 +1,24 @@
+  /*****************/
+ /* Media Queries */
+/*****************/
+/* 
+    Media queries can be used to specify style for specific:
+        Widths and heights of the viewport
+        Orientations of the viewport (landscape or portrait)
+        Resolutions
+*/
+
+/* Media Types */
+@media all{body {background-color: lightgreen;}}	        /* Used for all media type devices */
+@media print{body {background-color: lightgreen;}}	        /* Used for print preview mode */
+@media screen{body {background-color: lightgreen;}}	    /* Used for computer screens, tablets, smart-phones etc */
+
+
+/* Common Media Features */
+@media screen and (orientation: landscape){}	        /* applies when orientation of the viewport is Landscape */
+@media screen and (max-height: 600px){}	                /* applies when height of the viewport <= 600px */
+@media screen and (min-height: 600px){}	                /* applies when height of the viewport >= 600px */
+@media screen and (height: 600px){}	                    /* applies when height of the viewport = 600px (including scrollbar) */
+@media screen and (max-width: 480px){} 	                /* applies when width of the viewport <= 480px */
+@media screen and (min-width: 480px){}	                /* applies when width of the viewport >= 480px */
+@media screen and (width: 480px){}	                    /* applies when width of the viewport = 480px (including scrollbar) */

@@ -1,0 +1,152 @@
+<!----------->
+<!-- forms -->
+<!----------->
+<!-- An HTML form is used to collect user inputwhich is often sent to a server for processing -->
+
+<!--------------
+    Input Types
+--------------->
+<!-- Text Fields -->
+<form>
+    <fieldset>                                                              <!-- fieldset groups related data in a form and specifies border spcing ect. -->
+        <legend>Personalia:</legend>                                        <!-- legend gives the fieldset a caption -->
+        <label for="name">First name:</label><br>                           <!-- label pair with inputs so the for attribute = id of input (used by screen reader and extends clickable region of checkboxes but not radio buttons) -->
+        <input type="text" id="name" name="name"><br>                       <!-- type = text defines a single-line input field for text input -->
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+
+        <datalist id="lname">                                               <!-- datalist specifies a list of pre-defined options for an input (can use the the input's id or list attributes) -->
+            <option value="Smith">                                          <!-- options appear below text field when input is clicked on -->
+            <option value="Black">
+            <option value="Chapman">
+          </datalist>
+    </fieldset>
+</form>
+
+
+<!--Text Area Field -->
+<form>
+    <label for="speech">Speech</label><br>
+    <textarea name="speech" rows="10" cols="30">            <!-- textarea defines a multi-line input field for writting longer inputs -->
+        The cat was playing in the garden.                  <!-- deafult value in the text area -->
+    </textarea>
+</form>
+
+
+<!-- Radio Buttons -->
+<form>
+    <input type="radio" id="html" name="fav_language" value="HTML">     <!-- type = radio let a user select ONE of a limited number of choices -->
+    <label for="html">HTML</label><br>                                  <!-- label has to go after radio input -->
+    <input type="radio" id="css" name="fav_language" value="CSS">
+    <label for="css">CSS</label><br>
+</form>
+
+
+<!-- Checkboxes -->
+<form>
+    <input type="checkbox" id="v1" name="v1" value="Bike">              <!-- type = checkbox letd a user select ZERO or MORE options of a limited number of choices -->
+    <label for="vehicle1"> I have a bike</label><br>                    <!-- label has to go after checkbox input -->
+    <input type="checkbox" id="v2" name="v2" value="Car">
+    <label for="vehicle2"> I have a car</label><br>
+</form>
+
+
+<!-- Dropdown Menu -->
+<form>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">                      <!-- selcet defines a dropdown menu with multiple options -->
+      <option value="volvo">Volvo</option>              <!-- first option is the default selected -->
+      <option value="saab">Saab</option>
+      <option value="fiat" selected>Fiat</option>       <!-- if present, selected defines the default -->
+      <option value="audi">Audi</option>
+    </select>
+</form>
+
+
+<!-- Submit Buttons -->
+<form action="/action_page.php">                           <!-- action attribute specifies the form-handler -->
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>          <!-- name/value pairs  -->
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">                     <!-- type = submit defines a button for submitting the form data to a form-handler -->
+</form>
+
+
+<!-- Others -->
+<input type="button">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="tel">
+<input type="time">
+<input type="url">
+<input type="week">
+
+
+
+<!-------------------
+    Input Attributes
+-------------------->
+<input type="text" id="lname" name="lname" value="Doe"><br><br>             <!-- value defined an initial value for an input field -->
+<input type="text" id="fname" name="fname" value="John" readonly><br>       <!-- if present readonly specifies that the value cannot be changed (but users can tab to it, highlight it, copy text from it) -->
+<input type="text" id="fname" name="fname" value="John" disabled><br>       <!-- if present diables specify the input field is unsuable, unclickable and value is unsent when form submitted -->
+<input type="text" id="fname" name="fname" size="50"><br>                   <!-- size specifies the length of a text field (deafulot = 20) -->
+<input type="text" id="pin" name="pin" maxlength="4" size="4">              <!-- maxlength specifies the maximum number of characters -->
+<input type="number" id="quantity" name="quantity" min="1" max="5">         <!-- min and max specify the minimum and maximum values for an input field (works on number, range, date, datetime-local, month, time and week) -->
+<input type="file" id="files" name="files" multiple>                        <!-- multiple specifies that user is allowed to enter >1 value (works on email and file) -->
+<input type="text" id="country_code" name="country_code"
+pattern="[A-Za-z]{3}" title="Three letter country code">                    <!-- pattern specifies a regular expression that the input field's value is checked against (works on text, date, search, url, tel, email, and password) -->
+<input type="tel" id="phone" name="phone" placeholder="123-45-678">         <!-- placeholder displays an example input in a text field but will not be subimitted (works on  text, search, url, tel, email, and password) -->
+<input type="text" id="username" name="username" required>                  <!-- required specifies that an input field must be filled before submitting -->
+<input type="number" id="points" name="points" step="3">                    <!-- step  specifies the allowed number intervals for an input field e.g. if step="3": -3, 0, 3, 6... (works on number, range, date, datetime-local, month, time and week) -->
+<input type="text" id="fname" name="fname" autofocus><br>                   <!-- autofocus specifies that an input field should automatically get focus when the page loads -->
+<input type="text" id="fname" name="fname" autofocus><br>
+
+
+
+<!-----------------
+    Form Attributes
+------------------>
+<!-- Target Attribute -->
+<!-- specifies where to display response from server -->
+<form action="/action_page.php" target="_blank"></form>
+<!--
+    _blank      new window or tab
+    _self	    current window
+    _parent	    parent frame
+    _top	    full body of the window
+    framename   a named iframe
+-->
+
+<!-- Method Attribute -->
+<!-- specifies the HTTP method to be used when submitting the form data -->
+<form action="/action_page.php" method="get"> </form>           <!-- get method sends form data as URL vars -->
+<!--
+    Appends form data to the URL, in name/value pairs
+    NEVER use GET for sensitive data! (submitted data visible in the URL!)
+    2048 characters URL length limit
+    GET is good for non-secure data, like query strings in Google or bookmarking reults
+-->
+<form action="/action_page.php" method="post"> </form>          <!-- post method sends form data as HTTP post transaction -->
+<!--
+    Appends form data inside body of the HTTP request (not shown in the URL)
+    No size limitations
+    Form submissions with POST cannot be bookmarked
+-->
+
+<!-- Autocomplete Attribute -->
+<form action="/action_page.php" autocomplete="on"></form>           <!-- turns on browsers autocomplete for iunput fields -->
+
+<!-- Novalidate Attribute -->
+<form action="/action_page.php" novalidate></form>                  <!-- Wwen present, it specifies that the form-data (input) should not be validated when submitted -->

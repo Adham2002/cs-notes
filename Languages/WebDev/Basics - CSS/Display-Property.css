@@ -1,0 +1,151 @@
+  /********************/
+ /* Display Property */
+/********************/
+/* the display property is used to specify how an element is shown and behaves on a web page */
+
+
+/****************
+Inline and Block 
+****************/
+.s{ display: inline }	            /* Displays an element as an inline element (see Blovk-Vs-inline.html) */
+.s{ display: block }                /* Displays an element as a block element (see Blovk-Vs-inline.html) */
+.s{ display: inline-block }         /* Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values */
+.s{ display: run-in	}               /* Displays an element as either block or inline, depending on context */
+.s{ display: list-item }	        /* Let the element behave like a <li> element */
+
+
+/****
+Felx
+****/
+/* flexbox properties */
+.s{
+    /* felx displays */
+    display: flex;
+    display: inline-flex;               /* Displays an element as an inline-level flex container */
+    /* flex-direction */
+    flex-direction: column;             /* stacks flex items vertically (from top to bottom) */
+    flex-direction: column-reverse;     /* stacks flex items vertically (from bottom to top) */
+    flex-direction: row;                /* stacks the flex items horizontally (from left to right) (default) */
+    flex-direction: row-reverse;        /* stacks the flex items horizontally (from right to left) */
+    /* felx-wrap */
+    flex-wrap: wrap;                    /* flex items wraps to next line if necessary */
+    flex-wrap: nowrap;                  /* flex items doesn't wrap (default) */
+    flex-wrap: wrap-reverse;            /* flex items wraps to line above if necessary */
+    /* flex-flow */
+    flex-flow: row wrap;                /* shorthand for setting both flex-direction and flex-wrap */
+    /* justify-content */
+    justify-content: center;            /* flex items at center of the container horizonally */
+    justify-content: flex-start;        /* flex items at the left of the container (default) */
+    justify-content: flex-end;          /* flex items at the right of the container */
+    justify-content: space-around;      /* displays the flex items with x pixels before and after items (x grows/ shrinks so items + space fill the container) */
+    justify-content: space-between;     /* displays the flex items with fixed space before and after all items and x space inbetween */
+    /* align-items */
+    align-items: center;                /* flex items at middle of the container vertically */
+    align-items: flex-start;            /* flex items at top of container */
+    align-items: flex-end;              /* flex items at bottom of container */
+    align-items: stretch;               /* flex items fill the container vertically (default) */
+    align-items: baseline;              /* baselines (bottom of content) of flex items align */
+    /* align-content (only applies when flex-wrap = wrap) */
+    align-content: center;              /* flex lines keep fixed height and gap between but stay in the middle of the container vertically */
+    align-content: flex-start;          /* flex lines keep fixed height and gap between but stay at the top */
+    align-content: flex-end;            /* flex lines keep fixed height and gap between but stay at the bottom */
+    align-content: space-around;        /* flex lines have x pixels before and after them */
+    align-content: space-between;       /* flex lines have a fixed equal distance between them */
+}
+
+/* flex children properties */
+/* order */
+#item1{ order: 3 }                      /* can manually order items */
+#item2{ order: 2 }
+#item3{ order: 1 }
+/* flex-grow */
+#item1{ flex-grow: 8 }                  /* this item gows eight times faster than the other flex items */
+/* flex-shrink */
+#item1{ flex-shrink: 0 }                /* this item doesn't shrink */
+/* flex-basis */
+#item1{ flex-basis: 200px }             /* sets initial length of item to 200 px */
+/* flex */
+#item1{ flex: 0 0 200px }               /* flex is shorthand for flex-grow, flex-shrink, and flex-basis */
+/* align-self */
+#item1{ align-self: flex-start }        /* overrides align-items */
+#item2{ align-self: center }
+#item3{ align-self: flex-end }
+
+
+/****
+Grid
+****/
+/* grid properties */
+.s{
+    /* drid displays */
+    display: grid;
+    display: inline-grid;	                        /* Displays an element as an inline-level grid container */
+    /* grid-template-columns / -rows */
+    grid-template-columns: 1fr 1fr 1fr 1fr;         /* specifies there will be 4 column each of width 1fr */
+    grid-template-rows: 1fr 1fr;                    /* specifies there will be 2 rows each with height 1fr*/
+    /* justify-content */
+    justify-content: space-evenly;                  /* displays the gid columns with x pixels before the first column, between column and after the last column */
+    justify-content: space-around;                  /* same as flexbox */
+    justify-content: space-between;                 /* same as flexbox */
+    justify-content: center;                        /* same as flexbox */
+    justify-content: start;                         /* same as flexbox */
+    justify-content: end;                           /* same as flexbox */
+    /* align-content */
+    align-content: center;                          /* same as flexbox */
+    align-content: space-evenly;                    /* displays the grid rows with x pixels before the first row, between row and after the last row */
+    align-content: space-around;                    /* same as flexbox */
+    align-content: space-between;                   /* same as flexbox */
+    align-content: start;                           /* same as flexbox */
+    align-content: end;                             /* same as flexbox */
+}
+
+/* grid items properties */
+/* grid-column */
+.item1 {grid-column: 1 / 5;}                                                 /* item1 takes up the 1st to 5th column */
+.item1 {grid-column: 1 / span 3;}                                            /* item1 starts at 1st column  and spans 3 comuns*/
+/* grid-row */
+.item1 {grid-row: 1 / 4;}                                                    /* item1 takes up the 1st to 4th row */
+.item1 {grid-row: 1 / span 2;}                                               /* item1 starts at 1st row  and spans 2 rows*/
+/* grid-area */
+.item8 {grid-area: 1 / 2 / 5 / 6;}                                           /* Shorthand: start on row 1, column 2 and end on row 5, column 6 */
+.item8 {grid-area: 2 / 1 / span 2 / span 3;}                                 /* start on row 2, column 1 and spans 2 rows and 3 columns */
+.item1 {grid-area: myArea;}                                                  /* variable names can be used to specify the areas size using grid-template-areas */
+.grid-container {grid-template-areas: 
+    'myArea myArea . . .' 
+    'myArea myArea . . .';                                                   /* item 1 spans the first 2 columns and rows */
+}
+/* grid-area can also be used to order the grid */
+.item1 { grid-area: 1 / 3 / 2 / 4; }                            /* grid is ordered as shown below*/
+.item2 { grid-area: 2 / 3 / 3 / 4; }                            /*  3    4   1  */
+.item3 { grid-area: 1 / 1 / 2 / 2; }                            /*  5    6   2  */
+.item4 { grid-area: 1 / 2 / 2 / 3; }
+.item5 { grid-area: 2 / 1 / 3 / 2; }
+.item6 { grid-area: 2 / 2 / 3 / 3; }
+
+
+/*****
+Table
+*****/
+.s{ display: table }                    /* Let the element behave like a <table> element */
+.s{ display: table-caption }	        /* Let the element behave like a <caption> element */
+.s{ display: table-column-group	}       /* Let the element behave like a <colgroup> element */
+.s{ display: table-header-group	}       /* Let the element behave like a <thead> element */
+.s{ display: table-footer-group }	    /* Let the element behave like a <tfoot> element */
+.s{ display: table-row-group }	        /* Let the element behave like a <tbody> element */
+.s{ display: table-cell	}               /* Let the element behave like a <td> element */
+.s{ display: table-column }	            /* Let the element behave like a <col> element */
+.s{ display: table-row	}               /* Let the element behave like a <tr> element */
+.s{display: inline-table }	            /* The element is displayed as an inline-level table */
+
+
+/*****
+other
+*****/
+/* Contents */
+.s{display: contents}           /* Makes the container disappear, making the child elements children of the element the next level up in the DOM */
+/* None */
+.s{display: none}               /* doesn't display the item */
+/* Inherit */
+.s{display: inherit}            /* Inherits this property from its parent element */
+/* Initial */
+.s{display: initial}            /* sets this property to its default value

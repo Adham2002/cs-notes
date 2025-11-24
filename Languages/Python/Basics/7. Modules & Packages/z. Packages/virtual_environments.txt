@@ -1,0 +1,26 @@
+###############################
+# Virtual Environments (venv) #
+###############################
+# venv is a module that supports lightweight virtual environments with it's own independent set of directories
+# Like npm in node.js, venv manages the packages accessable to a project
+
+# Windows Commands for using venv
+#cd venv_location                               # cd to the directory you want your venv to be in
+#py -m venv venv_name                           # creates environment (you will see a new directory created which will store the environments files and packages)
+#pyenv exec py -m venv venv_name                # create environment with pyenv so will use python version specified by pyenv
+#venv_name\Scripts\activate                     # activates environment
+#pip install -r virtual_environments.txt        # installs all the packages specified in the required.txt file (-r tags specifies you want to read a file)
+#deactivate                                     # deactivates environment
+#rm -r venv_name                                # deletes venv
+
+
+# pyenv - python version manager used to install and set different version of python
+#pyenv install 3.10.9                    # installs a Python version 3.10.9
+#pyenv global 3.10.9                     # set Python 3.10.9 to the global version
+#pyenv local 3.10.9                      # sets it to the local version
+
+
+# Example required.txt File
+# can use comments as usual
+numpy                           # installs the latest verison of numpy
+matplotlib==3.8.0               # installs a specific verison of matplotlib

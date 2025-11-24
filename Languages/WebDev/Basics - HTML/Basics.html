@@ -1,0 +1,94 @@
+<!------------>
+<!-- Basics -->
+<!------------>
+
+<!DOCTYPE html>                       <!-- HTML documents MUST start with <!DOCTYPE html> (document type declaration) -->
+<html lang="en">                      <!-- All elements nested within <html> and </html> (lang-"en" specifies language for browser + help w SEO) -->
+
+
+    <head>                                                                                  <!-- head is a container for metadata placed above body -->
+        <title> My Page Titl e</title>                                                      <!-- title displays in the browser's toolbar and on search engines results -> is V important for SEO -->
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">                    <!-- favicon displays to the left on page title -->
+        <link rel="" href="">                                                               <!-- link defines the relationship between current doc and external recourse -->
+        <link rel="stylesheet" href="mystyle.css">                                          <!-- rel="stylesheet" means a CSS file is used to define styling for the whole page -->
+        <base href="https://www.w3schools.com/" target="_blank">                            <!-- base specifies the base URL and/or target for all relative URLs in a page -->
+
+        <!-- Metadata -->
+        <meta charset="UTF-8">                                                              <!-- Define the character set used -->
+        <meta name="keywords" content="HTML, CSS, JavaScript">                              <!-- Define keywords for search engines -->
+        <meta name="description" content="Free Web tutorials">                              <!-- Define a description of your web page -->
+        <meta name="author" content="John Doe">                                             <!-- Define the author of a page -->
+        <meta http-equiv="refresh" content="30">                                            <!-- Refresh document every 30 seconds -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">              <!-- Setting the viewport to make your website look good on all devices -->
+    </head>
+
+
+    <body>                           <!-- visible part of the HTML document is between <body> and </body> tags -->
+
+        <!-- 
+            HTML elements
+            defined by <tagname> some content </tagname> 
+        -->
+
+        <!-- Text Elements -->
+        <!-- Search engines use the headings to index the structure and content of your web pages -->
+        <h1 id="Title1">This is heading 1</h1>                                          <!-- HTML headings range from h1 to h6 -->
+        <h2>This is heading 2</h2>                                                      <!-- h1 is the largest heading -->
+        <h6>This is heading 6</h6>                                                      <!-- h6 is smallest heading -->
+        <p>This is a paragraph</p>                                                      <!-- paragraphs -->
+        
+
+        <!-- Text Formatting -->
+        <hr>                                                        <!-- Horizontal rule element draws a horizontal line accrioss the page -->
+        <p>line <br> break</p>                                      <!-- line breaks are empty elemtns as they have no content and thus no closing tag -->
+        <p><b>This text is bold.</b></p>                            <!-- <b> makes text bold -->
+        <p><strong>This text is important!</strong></p>             <!-- <strong> make text bold and carries semantic meaning puts emphasis on the text (important for SEO and scren reader)-->
+        <p><i>This text is italic.</i></p>                          <!-- <i> makes text italicize -->
+        <em>This text is emphasized</em>                            <!-- <em> italicizes text and carries semantic meaning puts emphasis on the text (important for SEO and scren reader) -->
+        <p><small>This is some smaller text.</small></p>            <!-- <small> make text slightly smaller -->
+        <p>Do not forget to buy <mark>milk</mark> today</p>         <!-- <mark> highlightes text -->
+        <p><del>strike through</del> <ins>underline</ins></p>       <!-- <del> strikes through text and <ins> underlines text -->
+        <p>This is <sub>subscripted</sub> text</p>                  <!-- <sub> defines subscript -->
+        <p>This is <sup>superscripted</sup> text.</p>               <!-- <sup> defines superscript -->
+
+        <pre>                                                                           <!-- pre elements preserves both spaces and line breaks unlike p which deletes them -->
+            My Bonnie lies over the ocean.
+          
+            My Bonnie lies over the sea.
+          
+            My Bonnie lies over the ocean.
+          
+            Oh, bring back my Bonnie to me.
+        </pre>
+
+
+        <!-- Link Elements -->
+        <a href="https://www.w3schools.com", target="_blank">This is a link</a>                     <!-- link's target attribute specifies where the link will open (_blank = new tab, default: _self = same frame )-->
+        <a href="mailto:someone@example.com">Send email</a>                                         <!-- mailto opens the user's email program + creates a draft to :someone@example.com -->
+        <button type="button" onclick="document.location='default.asp'">HTML Tutorial</button>      <!-- button's onclick attributes is written Javascript -->
+        <a href="html_demo.html#Title1">Jump to First Title</a>                                     <!-- bookmarks link to an element using it's #id (page doesn't need to be specified if element is on the same page) -->
+        <a href="w3schools.com">                                                                    <!-- images can be used as links by putting them in <a> tag -->
+            <img src="https://www.w3schools.com/html/workplace.jpg" width="400" height="379">       <!-- images are empty elementd with source file (src), alternative text (alt), width, and height provided as attributes -->
+        </a>
+        <img src="workplace.jpg" alt="Workplace" usemap="#workmap">                                 <!-- maps allow certain regions of images to be clickable -->
+        <map name="workmap">                                                                        <!-- name attribute === usemap attribute of image -->
+            <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">           <!-- areas define the clickable areas -->
+            <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">               <!-- rect shape is defined by the left top point coords and the right bottom point coords of the rectangle -->
+            <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">                <!-- circle shape is defined by the centre point coords and then the radius -->
+            <area shape="poly" coords="140,121,181,116,204,160" href="croissant.htm" >              <!-- poly shape is defined by a list of point coords -->
+            <area shape="circle" coords="337,300,44" href="coffee.htm" onclick="myFunction()">      <!-- can also use onclick attribute to activate a javascript function on click -->
+        </map>
+        
+        
+        <!-- Common HTML Attributes -->
+        <h2 title="I'm a header">The title Attribute</h2>           <!-- title attribute is displayed as a tooltip when you mouse over the element -->
+        <p style="color:red; background-color:powderblue;">This is a red paragraph.</p>        <!-- add CSS inline -->
+
+
+        <!-- Iframes (inline frames)-->
+        <iframe src="url"  height="200" width="300" name="iframe_a" title="description"></iframe>             <!-- iframe element used to embed another document within current HTML doc -->
+        <p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>                        <!-- iframes can be used as target frames for a link to be opened in -->
+
+
+    </body>
+</html>

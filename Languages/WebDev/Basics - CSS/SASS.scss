@@ -1,0 +1,105 @@
+  //////////
+ // SASS //
+//////////
+
+/*********************
+Compile .sass to .css
+*********************/
+// The sass executable converts .sass or .scss to .css can be run in many different ways
+// one-to-one
+sass input.sass output.css
+sass style.scss:style.css
+// many-to-many
+sass [<input.scss>:<output.css>] [<input/>:<output/>]...
+sass light.scss:light.css dark.scss:dark.css
+// many-to-one
+sass CSS:public/css
+// watching (watches a folder and automatically transpiles any )
+    // sass --watch path/file.sass path/file.css 
+
+
+/*********
+Variables
+*********/
+// Sass variables can store strings, numbers, colors, booleans, lists, nulls
+$myFont: Helvetica, sans-serif;
+body {font-family: $myFont;}
+
+// Global variables
+h1 {$myColor: green !global;}
+p {color: $myColor;}
+
+
+/*******
+Nesting
+*******/
+// Sass lets you nest CSS selectors in the same way as HTML
+nav {
+  ul {margin: 0;}
+  li {display: inline-block;}
+  a {padding: 6px 12px;}
+}
+
+// Nested properties
+.content{
+  font: {
+    family: Helvetica, sans-serif;      // changes font-family of content class
+    size: 18px;                         // changes font-size of content class
+    weight: bold;                       // changes font-weight of content class
+  }
+}
+
+
+/********************
+Importing & Partials
+********************/
+// Importing
+@import "variables";          // code from variables.scss will be transpiled and placed here
+
+// Importing partials (partials saved with underscore before name: _variable.scss)
+@import "variables";          // since _variables.scss is a partial it will not be transpiled directly to "variables.css" when imported
+
+
+/******
+Mixins
+******/
+// Creating mixins
+@mixin important-text {           // creates CSS code that can be reused like a function
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+}
+
+// Using mixins
+.content {
+  @include important-text;      // Sass transpiler will insert the mixin code here
+  background-color: green;
+}
+
+// mixin-ception
+@mixin special-text {@include important-text;}
+
+// Passing variables to mixins
+@mixin bordered($color: black, $width: 3px) {           // bordered mixin takes 2 arguments each with default values if the arguements aren't given
+  border: $width solid $color;
+}
+.myArticle {@include bordered(blue, 1px); }
+
+
+/***********
+Inheritance
+***********/
+
+.button-basic  {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report  {
+  @extend .button-basic;                        // Sass transpiler inserts button-basic code here (no need to multiclass HTML elements)
+  background-color: red;
+}

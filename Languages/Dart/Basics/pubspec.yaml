@@ -1,0 +1,25 @@
+# pubspec.yaml file defines package dependencies and other metadata important for the app being created
+# This file is checked by the dart compiler and all dependencies are downloaded before running
+
+name: NewIdeas                                                # Name of app
+description: >-                                               # 
+  Testing out my ideas
+version: 1.2.3                                                # 
+homepage: https://example-pet-store.com/newtify
+documentation: https://example-pet-store.com/newtify/docs
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  html: ^0.15.4
+  http: ^1.2.2
+  equatable: any
+  sqflite: ^2.3.3+1
+  path: ^1.9.0
+  
+dev_dependencies:
+  test: '>=1.15.0 <2.0.0'
+  flutter_lints: ^3.0.0
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev

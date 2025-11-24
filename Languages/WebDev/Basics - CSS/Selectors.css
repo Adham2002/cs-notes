@@ -1,0 +1,53 @@
+  /*************/
+ /* Selectors */
+/*************/
+
+
+/* HTML Element Selectors */
+p {
+    text-align: center;
+    color: red;
+}
+
+
+/* CSS id Selectors
+Uses the UNIQUE (within a page) id attribute of an HTML element to select a specific element */
+#para1 {
+    text-align: center;
+    color: red;
+}
+
+
+/* Class Selector */
+.center {
+    text-align: center;
+    color: red;
+}
+
+p.center {                                      /* Affects all elements with the style definitions (p AND .centre) */
+    text-align: center;
+    color: red;
+}
+
+.div .div2 .a {                             /* Affects the a class if it is wihtin div2 which is within div1 */
+    text-align: center;
+    color: red;
+}
+
+
+/* <p class="center large">This paragraph refers to two classes.</p>        An element with multiple classes is styled according to both classes
+
+/* Grouping Selectors
+Styling for mulptile selectors can be grouped together */
+h1, .centre, #para1 {                                     /* Affects all elements with the style definitions (h1 OR .centre OR #para1)*/
+    text-align: center;
+    color: red;
+ }
+
+
+/* Universal Selector
+Affects all elements */
+* {
+    text-align: center;
+    color: blue;
+}
