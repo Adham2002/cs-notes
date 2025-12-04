@@ -12,37 +12,72 @@ pytest [options] [file_or_dir] [file_or_dir] [...]
 ---
 
 ### General
-  -k EXPRESSION         only run tests which match the given substring expression. An expression is a python evaluatable expression where all names are substring-matched against test names and their parent classes.
-                        Example: -k 'test_method or test_other' matches all test functions and classes whose name contains 'test_method' or 'test_other', while -k 'not test_method' matches those that don't contain
-                        'test_method' in their names. -k 'not test_method and not test_other' will eliminate the matches. Additionally keywords are matched to classes and functions containing extra names in their
-                        'extra_keyword_matches' set, as well as functions which have names assigned directly to them. The matching is case-insensitive.
-  -m MARKEXPR           only run tests matching given mark expression.
-                        For example: -m 'mark1 and not mark2'.
-  --markers             show markers (builtin, plugin and per-project ones).
-  -x, --exitfirst       exit instantly on first error or failed test.
-  --fixtures, --funcargs
-                        show available fixtures, sorted by plugin appearance (fixtures with leading '_' are only shown with '-v')
-  --fixtures-per-test   show fixtures per test
-  --pdb                 start the interactive Python debugger on errors or KeyboardInterrupt.
-  --pdbcls=modulename:classname
-                        specify a custom interactive Python debugger for use with --pdb.For example: --pdbcls=IPython.terminal.debugger:TerminalPdb
-  --trace               Immediately break when running each test.
-  --capture=method      per-test capturing method: one of fd|sys|no|tee-sys.
-  -s                    shortcut for --capture=no.
-  --runxfail            report the results of xfail tests as if they were not marked
-  --lf, --last-failed   rerun only the tests that failed at the last run (or all if none failed)
-  --ff, --failed-first  run all tests, but run the last failures first.
-                        This may re-order tests and thus lead to repeated fixture setup/teardown.
-  --nf, --new-first     run tests from new files first, then the rest of the tests sorted by file mtime
-  --cache-show=[CACHESHOW]
-                        show cache contents, don't perform collection or tests. Optional argument: glob (default: '*').
-  --cache-clear         remove all cache contents at start of test run.
-  --lfnf={all,none}, --last-failed-no-failures={all,none}
-                        which tests to run with no previously (known) failures.
-  --sw, --stepwise      exit on test failure and continue from last failing test next time
-  --sw-skip, --stepwise-skip
-                        ignore the first failing test but stop on the next failing test.
-                        implicitly enables --stepwise.
+#### -k EXPRESSION
+- Only run tests which match the given substring expression. An expression is a python evaluatable expression where all names are substring-matched against test names and their parent classes.
+- Example: -k 'test_method or test_other' matches all test functions and classes whose name contains 'test_method' or
+- 'test_other', while -k 'not test_method' matches those that don't contain 'test_method' in their names.
+- -k 'not test_method and not test_other' will eliminate the matches. Additionally keywords are matched to classes and
+- Functions containing extra names in their 'extra_keyword_matches' set, as well as functions which have names assigned directly to them. The matching is case-insensitive.
+
+#### -m MARKEXPR
+- Only run tests matching given mark expression.
+- For example: -m 'mark1 and not mark2'.
+
+#### --markers
+- Show markers (builtin, plugin and per-project ones).
+
+#### -x, --exitfirst
+- Exit instantly on first error or failed test.
+
+#### --fixtures, --funcargs
+- Show available fixtures, sorted by plugin appearance (fixtures with leading '_' are only shown with '-v')
+
+#### --fixtures-per-test
+- show fixtures per test
+
+#### --pdb
+- Start the interactive Python debugger on errors or KeyboardInterrupt.
+
+#### --pdbcls=modulename:classname
+- Specify a custom interactive Python debugger for use with --pdb.For example: --pdbcls=IPython.terminal.debugger:TerminalPdb
+
+#### --trace
+- Immediately break when running each test.
+
+#### --capture=method
+- Per-test capturing method: one of fd|sys|no|tee-sys.
+  
+#### -s
+- Shortcut for --capture=no.
+
+#### --runxfail
+- Report the results of xfail tests as if they were not marked
+
+#### --lf, --last-failed
+- Rerun only the tests that failed at the last run (or all if none failed)
+
+#### --ff, --failed-first  
+- run all tests, but run the last failures first.
+- This may re-order tests and thus lead to repeated fixture setup/teardown.
+
+#### --nf, --new-first
+- Run tests from new files first, then the rest of the tests sorted by file mtime
+
+#### --cache-show=[CACHESHOW]
+- Show cache contents, don't perform collection or tests. Optional argument: glob (default: '*').
+
+#### --cache-clear
+- Rremove all cache contents at start of test run.
+
+#### --lfnf={all,none}, --last-failed-no-failures={all,none}
+- Which tests to run with no previously (known) failures.
+
+#### --sw, --stepwise
+- Exit on test failure and continue from last failing test next time
+
+#### --sw-skip, --stepwise-skip
+- Ignore the first failing test but stop on the next failing test.
+- Implicitly enables --stepwise.
 
 ---
 
