@@ -3,10 +3,12 @@
 - PyTest is a framework for writing small, readable tests
 - Can scale to support complex functional testing for applications and libraries
 - Running "pytest" command will test all files  form "test_*.py" or "*_test.py" in the current dir and its subdirs
+
 ---
 
 ## Command line usage
 pytest [options] [file_or_dir] [file_or_dir] [...]
+
 ---
 
 ### General
@@ -41,6 +43,7 @@ pytest [options] [file_or_dir] [file_or_dir] [...]
   --sw-skip, --stepwise-skip
                         ignore the first failing test but stop on the next failing test.
                         implicitly enables --stepwise.
+
 ---
 
 ### Reporting
@@ -66,6 +69,7 @@ pytest [options] [file_or_dir] [file_or_dir] [...]
   --pastebin=mode       send failed|all info to bpaste.net pastebin service.
   --junit-xml=path      create junit-xml style report file at given path.
   --junit-prefix=str    prepend prefix to classnames in junit-xml output
+
 ---
 
 ### Pytest warnings
@@ -102,6 +106,7 @@ collection:
                         ignore doctest ImportErrors
   --doctest-continue-on-failure
                         for a given doctest, continue to run after the first failure
+
 ---
 
 ### Test session debugging and configuration
@@ -123,6 +128,7 @@ collection:
   --setup-only          only setup fixtures, do not execute tests.
   --setup-show          show setup of fixtures while executing tests.
   --setup-plan          show what fixtures and tests would be executed but don't execute anything.
+
 ---
 
 ### Logging
@@ -147,6 +153,7 @@ collection:
                         log date format as used by the logging module.
   --log-auto-indent=LOG_AUTO_INDENT
                         Auto-indent multiline messages passed to the logging module. Accepts true|on, false|off or an integer.
+
 ---
 
 ### [pytest] ini-options in the first pytest.ini|tox.ini|setup.cfg file found
@@ -212,6 +219,7 @@ collection:
   minversion (string):  minimally required pytest version
   required_plugins (args):
                         plugins that must be present for pytest to run
+
 ---
 
 ### Environment variables
@@ -219,6 +227,7 @@ collection:
   PYTEST_PLUGINS           comma-separated plugins to load during startup
   PYTEST_DISABLE_PLUGIN_AUTOLOAD set to disable plugin auto-loading
   PYTEST_DEBUG             set to enable debug tracing of pytest's internals
+
 ---
 
 ### Misc
