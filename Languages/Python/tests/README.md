@@ -1,14 +1,14 @@
 # Pytest
-pytest is a framework for writing small, readable tests
-Can scale to support complex functional testing for applications and libraries
-Running "pytest" command will test all files  form "test_*.py" or "*_test.py" in the current dir and its subdirs
+## Overview
+- PyTest is a framework for writing small, readable tests
+- Can scale to support complex functional testing for applications and libraries
+- Running "pytest" command will test all files  form "test_*.py" or "*_test.py" in the current dir and its subdirs
+---
 
-usage: pytest [options] [file_or_dir] [file_or_dir] [...]
+## Command line usage
+pytest [options] [file_or_dir] [file_or_dir] [...]
 
-positional arguments:
-  file_or_dir
-
-general:
+### General
   -k EXPRESSION         only run tests which match the given substring expression. An expression is a python evaluatable expression where all names are substring-matched against test names and their parent classes.
                         Example: -k 'test_method or test_other' matches all test functions and classes whose name contains 'test_method' or 'test_other', while -k 'not test_method' matches those that don't contain
                         'test_method' in their names. -k 'not test_method and not test_other' will eliminate the matches. Additionally keywords are matched to classes and functions containing extra names in their
@@ -41,7 +41,7 @@ general:
                         ignore the first failing test but stop on the next failing test.
                         implicitly enables --stepwise.
 
-reporting:
+### Reporting
   --durations=N         show N slowest setup/test durations (N=0 for all).
   --durations-min=N     Minimal duration in seconds for inclusion in slowest list. Default 0.005
   -v, --verbose         increase verbosity.
@@ -65,7 +65,7 @@ reporting:
   --junit-xml=path      create junit-xml style report file at given path.
   --junit-prefix=str    prepend prefix to classnames in junit-xml output
 
-pytest-warnings:
+### Pytest warnings
   -W PYTHONWARNINGS, --pythonwarnings=PYTHONWARNINGS
                         set which warnings to report, see -W option of python itself.
   --maxfail=num         exit after first num failures or errors.
@@ -100,7 +100,7 @@ collection:
   --doctest-continue-on-failure
                         for a given doctest, continue to run after the first failure
 
-test session debugging and configuration:
+### Test session debugging and configuration
   --basetemp=dir        base temporary directory for this test run.(warning: this directory is removed if it exists)
   -V, --version         display pytest version and information about plugins. When given twice, also display information about plugins.
   -h, --help            show help message and configuration info
@@ -120,7 +120,7 @@ test session debugging and configuration:
   --setup-show          show setup of fixtures while executing tests.
   --setup-plan          show what fixtures and tests would be executed but don't execute anything.
 
-logging:
+### Logging
   --log-level=LEVEL     level of messages to catch/display.
                         Not set by default, so it depends on the root/parent log handler's effective level, where it is "WARNING" by default.
   --log-format=LOG_FORMAT
@@ -143,8 +143,7 @@ logging:
   --log-auto-indent=LOG_AUTO_INDENT
                         Auto-indent multiline messages passed to the logging module. Accepts true|on, false|off or an integer.
 
-[pytest] ini-options in the first pytest.ini|tox.ini|setup.cfg file found:
-
+### [pytest] ini-options in the first pytest.ini|tox.ini|setup.cfg file found
   markers (linelist):   markers for test functions
   empty_parameter_set_mark (string):
                         default marker for empty parametersets
@@ -208,13 +207,13 @@ logging:
   required_plugins (args):
                         plugins that must be present for pytest to run
 
-environment variables:
+### Environment variables
   PYTEST_ADDOPTS           extra command line options
   PYTEST_PLUGINS           comma-separated plugins to load during startup
   PYTEST_DISABLE_PLUGIN_AUTOLOAD set to disable plugin auto-loading
   PYTEST_DEBUG             set to enable debug tracing of pytest's internals
 
-
-to see available markers type: pytest --markers
-to see available fixtures type: pytest --fixtures
+### Misc
+- To see available markers type: pytest --markers
+- To see available fixtures type: pytest --fixtures
 (shown according to specified file_or_dir or current dir if not specified; fixtures with leading '_' are only shown with the '-v' option
